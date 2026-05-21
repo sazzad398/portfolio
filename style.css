@@ -1,58 +1,298 @@
-body {
+/* RESET */
+
+* {
   margin: 0;
-  font-family: Arial;
-  background: #0b0f1a;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* BODY */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #060b16;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* GRID BACKGROUND */
 
 .grid-overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
   background-size: 40px 40px;
+
+  z-index: 0;
   pointer-events: none;
 }
 
+/* HEADER */
+
 header {
+  position: relative;
+  z-index: 1;
+
   text-align: center;
-  padding: 20px;
+
+  padding: 30px 20px;
 }
 
 h1 {
   color: #00e5ff;
+
+  font-size: 48px;
+
+  text-shadow:
+    0 0 10px rgba(0,229,255,0.5),
+    0 0 30px rgba(0,229,255,0.2);
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #cfcfcf;
+}
+
+/* NAVIGATION */
+
+nav {
+  margin-top: 25px;
 }
 
 nav a {
   color: white;
-  margin: 10px;
   text-decoration: none;
+
+  margin: 0 15px;
+
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: #00e5ff;
+
+  text-shadow: 0 0 10px #00e5ff;
 }
+
+/* HERO SECTION */
 
 .hero {
-  text-align: center;
-  padding: 60px;
+  min-height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  position: relative;
+  z-index: 1;
 }
 
-.card, .project-card {
-  background: #121a2a;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
+/* HERO BOX */
+
+.hero-box {
+  background: rgba(18, 26, 42, 0.85);
+
+  border: 1px solid rgba(0,229,255,0.3);
+
+  padding: 50px;
+
+  border-radius: 20px;
+
+  max-width: 750px;
+
+  text-align: center;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 0 20px rgba(0,229,255,0.15),
+    0 0 60px rgba(0,229,255,0.08);
+
+  transition: 0.4s;
 }
+
+.hero-box:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 30px rgba(0,229,255,0.25),
+    0 0 80px rgba(0,229,255,0.1);
+}
+
+.hero-box h2 {
+  font-size: 52px;
+
+  margin-bottom: 20px;
+
+  color: #00e5ff;
+}
+
+.hero-box p {
+  color: #d6d6d6;
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+.it {
+  color: #8c8c8c;
+  font-style: italic;
+}
+
+/* BUTTON */
+
+.btn {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 12px 28px;
+
+  border-radius: 10px;
+
+  background: #00e5ff;
+
+  color: black;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+
+  background: #00c8e0;
+
+  box-shadow:
+    0 0 15px rgba(0,229,255,0.5);
+}
+
+/* CARD */
+
+.card,
+.project-card {
+  background: rgba(18, 26, 42, 0.9);
+
+  border: 1px solid rgba(0,229,255,0.15);
+
+  padding: 25px;
+
+  margin: 20px;
+
+  border-radius: 15px;
+
+  position: relative;
+  z-index: 1;
+
+  transition: 0.3s;
+}
+
+.card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 20px rgba(0,229,255,0.15);
+}
+
+/* PROJECT GRID */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
 }
 
+/* INPUTS */
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 10px;
+
+  border: 1px solid #333;
+
+  background: #0d1422;
+
+  color: white;
+
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 15px;
+
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #00e5ff;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+
+  background: #00c8e0;
+}
+
+/* FOOTER */
+
 footer {
+  position: relative;
+  z-index: 1;
+
   text-align: center;
-  padding: 20px;
-  color: gray;
+
+  padding: 30px 20px;
+
+  color: #777;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .hero-box h2 {
+    font-size: 36px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .hero-box {
+    padding: 30px;
+  }
 }
